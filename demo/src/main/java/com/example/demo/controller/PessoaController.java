@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Pessoa;
 import com.example.demo.repository.PessoaRepository;
+import com.example.demo.service.PessoaService;
 
 @RestController
 @RequestMapping("/pessoa")
@@ -26,23 +27,24 @@ public class PessoaController {
 	@Autowired
 	PessoaRepository pessoaRepository;
 	
+	@Autowired
+	PessoaService pessoaService;
+	
 	@PostMapping()
 	public Pessoa salvarPessoa(@RequestBody Pessoa pessoa) {
-		return pessoaRepository.save(pessoa);
+		return pessoaService.salvar(pessoa);
 	}
 	
 	@GetMapping
 	public List<Pessoa> buscarPessoas(){
-		return pessoaRepository.findAll();
+		return pessoaService.listar();
 	}
 	
-	@GetMapping(value = "buscarid")
+	
+	@GetMapping(value = "/buscarid")
 	@ResponseBody
 	public ResponseEntity<Pessoa> buscarId(@RequestParam(name = "id") Long id){
-		
-		Pessoa pessoa = pessoaRepository.findById(id).get();
-		
-		return new ResponseEntity<Pessoa>(pessoa, HttpStatus.OK);
+			return pessoaService.buscarId(id);
 	}
 	
 	@GetMapping("/deletar")

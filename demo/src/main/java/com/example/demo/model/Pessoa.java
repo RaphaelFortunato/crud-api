@@ -1,19 +1,23 @@
 package com.example.demo.model;
 
-import javax.annotation.processing.Generated;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.repository.cdi.Eager;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 
 
 @Entity
+@SequenceGenerator(name = "seq_pessoa", sequenceName = "seq_pessoa", allocationSize = 1, initialValue = 6)
 public class Pessoa {
 
-	@jakarta.persistence.Id
-	@GeneratedValue
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_produto")
 	private Long id;
 	private String nome;
 	private String cpf;
