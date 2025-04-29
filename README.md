@@ -1,6 +1,6 @@
 # CRUD API 📝
 
-Projeto desenvolvido com Java e Spring Boot. A aplicação é focada na gestão de produtos, com funcionalidades de CRUD. Utiliza o banco de dados PostgreSQL para persistência de dados e Spring Data JPA para o gerenciamento da camada de dados.
+Projeto desenvolvido com Java e Spring Boot. A aplicação é focada na gestão de pessoas, com funcionalidades de CRUD. Utiliza o banco de dados PostgreSQL para persistência de dados e Spring Data JPA para o gerenciamento da camada de dados.
 
 ## Tecnologias Utilizadas
 
