@@ -22,3 +22,15 @@ Projeto desenvolvido com Java e Spring Boot. A aplicação é focada na gestão 
 - Java 17+ instalado
 - Maven instalado
 - PostgreSQL configurado localmente ou remotamente
+
+## Estrutura do Projeto
+O projeto segue a seguinte estrutura básica:
+
+```
+src/main/java/com/example/demo  
+  ├── controller      # Contém os controladores da API  
+  ├── model           # Modelo de dado, como Usuário  
+  ├── repository      # Repositório para acessar o banco de dados  
+  ├── service         # Lógica de negócios
+````
+
